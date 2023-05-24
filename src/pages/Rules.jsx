@@ -1,0 +1,40 @@
+import React from 'react'
+
+export default function Rules() {
+  return (
+    <div className="container game-rules-container">
+      <div className="game-rules">
+        <h1>GAME RULES</h1>
+        <div className="game-rules__section">
+          <div className="game-rules__subtitle">
+            OBJECTIVES
+          </div>
+          <div className="game-rules__text">
+            Be the first player to connect 4 of the same colored discs in a
+            row (either vertically, horizontally, or diagonally).
+          </div>
+        </div>
+        <div className="game-rules__section">
+          <div className="game-rules__subtitle">
+            HOW TO PLAY
+          </div>
+          <ol className="game-rules__list">
+            <li>
+              Red goes first in the first game
+            </li>
+            <li>
+              Players must alternate turns, and only
+              one disc can be dropped in each turn.
+            </li>
+            <li>
+              The game ends when there is a 4-in-a-row or a stalemate.
+            </li>
+            <li>
+              The starter of the previous game goes second on the next game.
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  )
+}
