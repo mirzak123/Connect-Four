@@ -1,2 +1,2 @@
 # CONNECT FOUR
-## Live Site: mirzak123.github.io/Connect-Four
+## Live Site: [Connect Four](mirzak123.github.io/Connect-Four)
