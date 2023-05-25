@@ -10,6 +10,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<MainMenu />} />
+        <Route path="/Connect-Four" element={<MainMenu />} />
         <Route path="/player-vs-player" element={<Game />} />
         <Route path="/game-rules" element={<Rules />} />
       </Routes>
