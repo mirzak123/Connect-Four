@@ -1,9 +1,27 @@
 import React from "react"
 import { motion } from 'framer-motion'
-import counterRed from "../assets/images/counter-red-large.svg"
-import counterYellow from "../assets/images/counter-yellow-large.svg"
+import counterRedLarge from "../assets/images/counter-red-large.svg"
+import counterYellowLarge from "../assets/images/counter-yellow-large.svg"
+import counterRedSmall from "../assets/images/counter-red-small.svg"
+import counterYellowSmall from "../assets/images/counter-yellow-small.svg"
 
 export default function Field(props) {
+  let counterRed = counterRedLarge
+  let counterYellow = counterYellowLarge
+
+  const styles = {
+    width: props.screenSize !== 'small' ? '64px' : '39px',
+    height: props.screenSize !== 'small' ? '64px' : '39px',
+    cursor: 'pointer',
+    position: 'relative',
+    // bowShadow: '0 0 10px 10px #fff inset',
+  }
+
+  if (props.screenSize === 'small') {
+    counterRed = counterRedSmall
+    counterYellow = counterYellowSmall
+  }
+
   const tween = {
     type: "tween",
     duration: 0.2
@@ -18,6 +36,7 @@ export default function Field(props) {
       data-row={props.row}
       onClick={() => props.handleMove(props.row, props.col)}
       onMouseEnter={(e) => props.handleMarker(e, props.col)}
+      style={styles}
     >
       {props.value !== 0 &&
         <img src={props.value === 1 ? counterRed : counterYellow} alt="counter disk" />

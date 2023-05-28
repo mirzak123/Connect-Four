@@ -12,6 +12,23 @@ export default function Game() {
   const [game, setGame] = useState(new ConnectFour())
   const [showWinnerInfo, setShowWinnerInfo] = useState(false)
 
+  // Controlling which images render in which view (desktop, tablet, mobile)
+  const [screenSize, setScreenSize] = useState('');
+
+  useEffect(() => {
+    const handleResize = () => {
+      const { innerWidth } = window;
+      setScreenSize(innerWidth > 1024 ? 'large' : innerWidth > 768 ? 'medium' : 'small');
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   /*
    * If we were to put timer state into the Game component, every time
    * the timer updated (every second), the entire Game component would
@@ -42,6 +59,7 @@ export default function Game() {
 
   function restartMatch() {
     setGame(new ConnectFour())
+    setResetTimer(prev => !prev)
   }
 
   function toggleOnMove() {
@@ -64,13 +82,24 @@ export default function Game() {
             value="restart"
           />
         </div>
+        <div className="player-score-container">
+          <PlayerScore
+            player={1}
+            wins={game.gamesWon[1]}
+            screenSize={screenSize}
+          />
+          <PlayerScore
+            player={2}
+            wins={game.gamesWon[2]}
+            screenSize={screenSize}
+          />
+        </div>
         <GameBoard
           game={game}
           setGame={setGame}
           setResetTimer={setResetTimer}
+          screenSize={screenSize}
         />
-        <PlayerScore player={1} wins={game.gamesWon[1]} />
-        <PlayerScore player={2} wins={game.gamesWon[2]} />
         <div className="game__info">
           { showWinnerInfo ?
             <AnimatePresence>
@@ -87,6 +116,7 @@ export default function Game() {
               player={game.currentGameBoard.onMove}
               toggleOnMove={toggleOnMove}
               game={game}
+              screenSize={screenSize}
             />
           }
         </div>

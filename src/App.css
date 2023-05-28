@@ -38,17 +38,25 @@ body {
 
 img {
   max-width: 100%;
+  -webkit-touch-callout: none; /* Disable callout */
+  -webkit-user-select: none; /* Webkit browsers */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
 }
 
 #root {
   min-height: 100vh;
+  text-align: center;
 }
 
 .container {
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin: 0 auto;
+  border: 1px solid red;
+  /* max-width: 1200px; */
+  /* width: 50%; */
+  display: inline-block;
 }
 
 .container--dark-purple {
@@ -128,8 +136,11 @@ img {
 }
 
 .game-container {
-  align-items: center;
-  gap: 3rem;
+  border: 1px solid red;
+  text-align: center;
+  /* align-items: center; */
+  /* gap: 3rem; */
+  margin: 0 auto;
 
   position: relative;
   z-index: 0;
@@ -147,6 +158,8 @@ img {
 }
 
 .game-board {
+  border: 3px solid red;
+  display: inline-block;
   position: relative;
   margin: 3rem 0 5rem;
   z-index: 10;
@@ -176,6 +189,8 @@ img {
   gap: 24px;
   padding: 20px;
   z-index: 20;
+  /* z-index: 400; */
+  /* border: 2px solid red; */
 }
 
 .game-board__marker {
@@ -185,16 +200,16 @@ img {
   left: 52px;
 }
 
-.field {
-  width: 64px;
-  height: 64px;
-  cursor: pointer;
-  position: relative;
-}
+/* .field { */
+/*   width: 64px; */
+/*   height: 64px; */
+/*   cursor: pointer; */
+/*   position: relative; */
+/* } */
 
 .field > img {
   /*removes thick border*/
-  scale: 1.05;
+  scale: 1.12;
 }
 
 .red {
@@ -208,6 +223,12 @@ img {
   border-radius: 20px;
   position: absolute;
   transform: translate(-50%, -50%);
+}
+
+.player-score-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
 }
 
 .player-score {
@@ -311,4 +332,20 @@ img {
   height: 180px;
   border-radius: 60px 60px 0 0;
   z-index: -100000;
+}
+
+@media (max-width: 1024px) {
+  .modal {
+    width: 60%;
+  }
+
+  .logo {
+    transform: scale(0.3);
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    font-size: 80%;
+  }
 }

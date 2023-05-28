@@ -2,12 +2,31 @@ import React, { useState, useEffect } from 'react'
 import { nanoid } from 'nanoid'
 import ConnectFour from '../gameLogic/connectFour'
 import Field from '../components/Field'
-import blacyLayer from '../assets/images/board-layer-black-large.svg'
-import whiteLayer from '../assets/images/board-layer-white-large.svg'
+import blackLayerLarge from '../assets/images/board-layer-black-large.svg'
+import whiteLayerLarge from '../assets/images/board-layer-white-large.svg'
+import blackLayerSmall from '../assets/images/board-layer-black-small.svg'
+import whiteLayerSmall from '../assets/images/board-layer-white-small.svg'
 import markerRed from '../assets/images/marker-red.svg'
 import markerYellow from '../assets/images/marker-yellow.svg'
 
 export default function GameBoard(props) {
+
+  let blackLayer = blackLayerLarge
+  let whiteLayer = whiteLayerLarge
+  let showMarker = true
+
+  const fieldsContainerStyles = {
+    padding: props.screenSize !== 'small' ? '20px' : '7px',
+    gap: props.screenSize !== 'small' ? '24px' : '8px',
+  }
+
+  if (props.screenSize === 'small') {
+    blackLayer = blackLayerSmall
+    whiteLayer = whiteLayerSmall
+    showMarker = false
+  } else if (props.screenSize === 'medium') {
+    showMarker = false
+  }
 
   function handleMove(row, col) {
     props.game.makeMove(col)
@@ -24,6 +43,8 @@ export default function GameBoard(props) {
   }
 
   function handleMarker(e, col) {
+    if (!showMarker) return
+
     const marker = document.getElementById('marker')
     const board = document.getElementById('board')
     const fieldRect = e.target.getBoundingClientRect();
@@ -44,6 +65,7 @@ export default function GameBoard(props) {
           handleMarker={handleMarker}
           animate={gameBegun && lastX === i && lastY === j ? true : false}
           active={props.game.isGameActive ? true : false}
+          screenSize={props.screenSize}
         />
       )
     })
@@ -56,7 +78,7 @@ export default function GameBoard(props) {
     >
       <img
         className="game-board__image game-board__image--black"
-        src={blacyLayer}
+        src={blackLayer}
         alt="game board black"
       />
       <img
@@ -64,15 +86,20 @@ export default function GameBoard(props) {
         src={whiteLayer}
         alt="game board white"
       />
-      <div className="game-board__fields-container">
+      <div
+        className="game-board__fields-container"
+        style={fieldsContainerStyles}
+      >
         {fieldElements}
       </div>
-      <img
-        id="marker"
-        className="game-board__marker"
-        src={props.game.currentGameBoard.onMove === 1 ? markerRed : markerYellow}
-        alt="marker"
-      />
+      {showMarker &&
+        <img
+          id="marker"
+          className="game-board__marker"
+          src={props.game.currentGameBoard.onMove === 1 ? markerRed : markerYellow}
+          alt="marker"
+        />
+      }
     </div>
   )
 }

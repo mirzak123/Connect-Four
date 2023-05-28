@@ -35,6 +35,10 @@ export default function Timer(props) {
     }
   }, [timer, setTimer])
 
+  const timerStyles = {
+    width: props.screenSize === "large" ? "100%" : "60%",
+  }
+
   return (
     <div
       className="timer"
@@ -43,6 +47,7 @@ export default function Timer(props) {
         className="timer__image"
         src={props.player === 1 ? timerRed : timerYellow}
         alt="move counter"
+        style={timerStyles}
       />
       <div className="timer__info">
         <div className="timer__player">Player {props.player}'s turn</div>
