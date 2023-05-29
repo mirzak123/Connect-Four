@@ -137,15 +137,24 @@ img {
   flex-direction: column;
   align-items: center;
   padding: 3em;
+  position: relative;
+}
+
+.game-rules__section {
+  text-align: left;
+  width: 90%;
 }
 
 .game-rules__subtitle {
   color: var(--purple);
+  margin: 1em 0 0;
+  font-size: 1.3rem;
 }
 
 .game-rules__list {
   padding-inline: 0;
   list-style-type: decimal;
+  margin: 0;
 }
 
 .game-container {

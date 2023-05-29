@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import checkbox from '../assets/images/icon-check.svg'
 
 export default function Rules() {
   return (
@@ -34,6 +36,15 @@ export default function Rules() {
             </li>
           </ol>
         </div>
+        <Link
+          to="/Connect-Four"
+          style={{
+            position: 'absolute',
+            bottom: '-12%'
+          }}
+        >
+          <img src={checkbox} alt="checkbox" />
+        </Link>
       </div>
     </div>
   )
