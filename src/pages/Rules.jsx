@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Rules() {
   return (
-    <div className="modal-container">
+    <div className="modal-container bg-purple">
       <div className="game-rules">
         <h1>GAME RULES</h1>
         <div className="game-rules__section">

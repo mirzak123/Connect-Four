@@ -72,7 +72,7 @@ export default function Game() {
       <div className="game-container">
         <div className="toolbar">
           <ToolbarButton
-            to="/"
+            to="/Connect-Four"
             value="menu"
           />
           <Logo />
