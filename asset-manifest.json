@@ -1,14 +1,18 @@
 {
   "files": {
-    "main.css": "/Connect-Four/static/css/main.7ba65e4e.css",
-    "main.js": "/Connect-Four/static/js/main.cb629ccd.js",
+    "main.css": "/Connect-Four/static/css/main.38968387.css",
+    "main.js": "/Connect-Four/static/js/main.9d5934e6.js",
     "static/media/SpaceGrotesk-Medium.ttf": "/Connect-Four/static/media/SpaceGrotesk-Medium.dff8d806ce24db6ac483.ttf",
     "static/media/SpaceGrotesk-Bold.ttf": "/Connect-Four/static/media/SpaceGrotesk-Bold.96e001703fcc4898de0e.ttf",
+    "static/media/board-layer-black-small.svg": "/Connect-Four/static/media/board-layer-black-small.42afffd73e45d00ba497d42094c95366.svg",
     "static/media/board-layer-black-large.svg": "/Connect-Four/static/media/board-layer-black-large.33490574022d850673c1e8c8d9a20fd2.svg",
     "static/media/board-layer-white-large.svg": "/Connect-Four/static/media/board-layer-white-large.8d1e0d20b4249f8a7e07acb0c2341940.svg",
+    "static/media/board-layer-white-small.svg": "/Connect-Four/static/media/board-layer-white-small.0c56315ab5bb47330f80c6c693684254.svg",
     "static/media/player-vs-player.svg": "/Connect-Four/static/media/player-vs-player.0f4120171bf670fca99a7e7099d547d0.svg",
     "static/media/logo.svg": "/Connect-Four/static/media/logo.18f406c1e091b7f33f727e65e6a8cf5b.svg",
+    "static/media/counter-red-small.svg": "/Connect-Four/static/media/counter-red-small.ebb6f102699bb8bd27557295c4b12490.svg",
     "static/media/turn-background-red.svg": "/Connect-Four/static/media/turn-background-red.a17013f69456193c4ebcdcad8719a2e4.svg",
+    "static/media/counter-yellow-small.svg": "/Connect-Four/static/media/counter-yellow-small.28a64a8cf4c3f9abb40b909ebe7cd8d3.svg",
     "static/media/counter-yellow-large.svg": "/Connect-Four/static/media/counter-yellow-large.f7e047b0e89b59153893ff1391a20973.svg",
     "static/media/counter-red-large.svg": "/Connect-Four/static/media/counter-red-large.660c2bf877150e5a3430479adf62bb45.svg",
     "static/media/player-two.svg": "/Connect-Four/static/media/player-two.3808ca69d8458efbdca19bd10962ae09.svg",
@@ -17,11 +21,11 @@
     "static/media/marker-red.svg": "/Connect-Four/static/media/marker-red.201fc49ae1d8753513aeda6bd7021db2.svg",
     "static/media/marker-yellow.svg": "/Connect-Four/static/media/marker-yellow.a8ee5c49c251b26a543fb469cccdffa8.svg",
     "index.html": "/Connect-Four/index.html",
-    "main.7ba65e4e.css.map": "/Connect-Four/static/css/main.7ba65e4e.css.map",
-    "main.cb629ccd.js.map": "/Connect-Four/static/js/main.cb629ccd.js.map"
+    "main.38968387.css.map": "/Connect-Four/static/css/main.38968387.css.map",
+    "main.9d5934e6.js.map": "/Connect-Four/static/js/main.9d5934e6.js.map"
   },
   "entrypoints": [
-    "static/css/main.7ba65e4e.css",
-    "static/js/main.cb629ccd.js"
+    "static/css/main.38968387.css",
+    "static/js/main.9d5934e6.js"
   ]
 }
