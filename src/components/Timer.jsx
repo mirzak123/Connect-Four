@@ -36,7 +36,7 @@ export default function Timer(props) {
   }, [timer, setTimer])
 
   const timerStyles = {
-    width: props.screenSize === "large" ? "100%" : "60%",
+    width: props.screenSize === "large" ? "100%" : "80%",
   }
 
   return (

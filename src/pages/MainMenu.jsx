@@ -5,7 +5,7 @@ import playerVsPlayerLogo from '../assets/images/player-vs-player.svg'
 
 export default function MainMenu() {
   return (
-    <div className="container container--dark-purple">
+    <div className="modal-container modal-container--purple">
       <div className="modal">
         <Logo />
         <div className="main-menu-buttons">
