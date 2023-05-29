@@ -13,6 +13,7 @@ function App() {
         <Route path="/Connect-Four" element={<MainMenu />} />
         <Route path="/player-vs-player" element={<Game />} />
         <Route path="/game-rules" element={<Rules />} />
+        <Route element={<MainMenu />} />
       </Routes>
     </div>
   )
