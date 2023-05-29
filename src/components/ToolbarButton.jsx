@@ -12,7 +12,8 @@ export default function ToolbarButton(props) {
     borderRadius: '25px',
     textTransform: 'uppercase',
     minWidth: '120px',
-    textAlign: 'center'
+    textAlign: 'center',
+    transition: 'background-color .15s ease-in-out',
   }
 
   return (

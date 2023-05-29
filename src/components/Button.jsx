@@ -8,7 +8,8 @@ export default function Button(props) {
     backgroundColor: `var(--${props.color})`,
     display: 'flex',
     justifyContent: 'space-between',
-    alignItems: 'center'
+    alignItems: 'center',
+    transition: 'box-shadow .12s ease-in-out',
   }
 
  return (

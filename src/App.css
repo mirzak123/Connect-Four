@@ -362,6 +362,11 @@ img {
     margin-top: 0.3em;
   }
 
+  .winner-info-wrapper {
+    width: 70%;
+    bottom: -12%;
+  }
+
   .timer {
     bottom: -12%;
   }
