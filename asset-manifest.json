@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Connect-Four/static/css/main.38968387.css",
-    "main.js": "/Connect-Four/static/js/main.9d5934e6.js",
+    "main.css": "/Connect-Four/static/css/main.59c4599b.css",
+    "main.js": "/Connect-Four/static/js/main.21d819a0.js",
     "static/media/SpaceGrotesk-Medium.ttf": "/Connect-Four/static/media/SpaceGrotesk-Medium.dff8d806ce24db6ac483.ttf",
     "static/media/SpaceGrotesk-Bold.ttf": "/Connect-Four/static/media/SpaceGrotesk-Bold.96e001703fcc4898de0e.ttf",
     "static/media/board-layer-black-small.svg": "/Connect-Four/static/media/board-layer-black-small.42afffd73e45d00ba497d42094c95366.svg",
@@ -21,11 +21,11 @@
     "static/media/marker-red.svg": "/Connect-Four/static/media/marker-red.201fc49ae1d8753513aeda6bd7021db2.svg",
     "static/media/marker-yellow.svg": "/Connect-Four/static/media/marker-yellow.a8ee5c49c251b26a543fb469cccdffa8.svg",
     "index.html": "/Connect-Four/index.html",
-    "main.38968387.css.map": "/Connect-Four/static/css/main.38968387.css.map",
-    "main.9d5934e6.js.map": "/Connect-Four/static/js/main.9d5934e6.js.map"
+    "main.59c4599b.css.map": "/Connect-Four/static/css/main.59c4599b.css.map",
+    "main.21d819a0.js.map": "/Connect-Four/static/js/main.21d819a0.js.map"
   },
   "entrypoints": [
-    "static/css/main.38968387.css",
-    "static/js/main.9d5934e6.js"
+    "static/css/main.59c4599b.css",
+    "static/js/main.21d819a0.js"
   ]
 }
