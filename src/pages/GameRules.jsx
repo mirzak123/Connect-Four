@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import checkbox from '../assets/images/icon-check.svg'
 
-export default function Rules() {
+export default function GameRules() {
   return (
     <div className="modal-container bg-purple">
       <div className="game-rules">

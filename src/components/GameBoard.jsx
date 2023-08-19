@@ -15,9 +15,18 @@ export default function GameBoard(props) {
   let whiteLayer = whiteLayerLarge
   let showMarker = true
 
+  const board = document.getElementById('board')
+  const boardWidth = board ? board.offsetWidth : 0
+
+    // padding: props.screenSize !== 'small' ? '20px' : '7px',
+    // gap: props.screenSize !== 'small' ? '24px' : '8px'
+    // padding:`${Math.floor(0.031645 * boardWidth)}px}`,
+    // gap:`${0.037975 * boardWidth}px}`
   const fieldsContainerStyles = {
-    padding: props.screenSize !== 'small' ? '20px' : '7px',
-    gap: props.screenSize !== 'small' ? '24px' : '8px',
+    padding: `${0.031646 * boardWidth}px`,
+    paddingBottom: `${3 * 0.031646 * boardWidth}px`,
+    columnGap:`${0.037975 * boardWidth}px`,
+    rowGap:`${0.03 * boardWidth}px`,
   }
 
   if (props.screenSize === 'small') {
@@ -29,9 +38,11 @@ export default function GameBoard(props) {
   }
 
   function handleMove(row, col) {
-    props.game.makeMove(col)
+    const move = props.game.makeMove(col)
     props.setGame(new ConnectFour(props.game))
-    props.setResetTimer(prev => !prev)
+    if (move) {
+      props.setResetTimer(prev => !prev)
+    }
   }
 
   // prevent null value checking when there has been no last move made
@@ -66,6 +77,12 @@ export default function GameBoard(props) {
           animate={gameBegun && lastX === i && lastY === j ? true : false}
           active={props.game.isGameActive ? true : false}
           screenSize={props.screenSize}
+          boardWidth={boardWidth}
+          isWinningTile={props.game.currentGameBoard.connectedTiles?.some(coord => {
+            if (coord[0] === i && coord[1] === j) {
+              return true
+            }
+          })}
         />
       )
     })

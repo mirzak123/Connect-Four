@@ -117,13 +117,17 @@ img {
 
 }
 
+.button__text {
+  margin-right: auto;
+}
+
 .button__icon {
   display: block;
 }
 
-.button:only-child {
-  justify-content: center;
-}
+/* .button:only-child { */
+/*   justify-content: center; */
+/* } */
 
 .button:hover {
   cursor: pointer;
@@ -159,8 +163,6 @@ img {
 
 .game-container {
   text-align: center;
-  /* align-items: center; */
-  /* gap: 3rem; */
   margin: 0 auto;
 
   position: relative;
@@ -206,10 +208,11 @@ img {
   top: 0;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 24px;
-  padding: 20px;
   z-index: 20;
-  /* z-index: 400; */
+
+  /*potentially dangerous*/
+  width: 100%;
+  height: 100%;
 }
 
 .game-board__marker {
@@ -219,16 +222,25 @@ img {
   left: 52px;
 }
 
-/* .field { */
-/*   width: 64px; */
-/*   height: 64px; */
-/*   cursor: pointer; */
-/*   position: relative; */
-/* } */
-
 .field > img {
   /*removes thick border*/
   scale: 1.12;
+}
+
+.field {
+  position: relative;
+}
+
+.field__circle {
+  height: 70%;
+  width: 70%;
+  border: 3px solid var(--white);
+  z-index: 100;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .red {
@@ -391,7 +403,13 @@ img {
     font-size: 80%;
   }
 
-  .modal,
+  .modal {
+    width: 100%;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+  }
+
   .game-rules {
     width: 90%;
   }

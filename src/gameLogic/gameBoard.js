@@ -5,7 +5,7 @@ export default class GameBoard {
     this.lastMove = null
     this.winner = null // null if game isn't over, 0 for tie, 1 and 2 for players
     this.moveCount = 0
-    this.connectedTiles = null
+    this.connectedTiles = null // array of 4 connected tiles that won the game
   }
 
   static ROWS = 6
@@ -13,7 +13,7 @@ export default class GameBoard {
 
   static getNewBoard() {
     // instantiate matrix and assign value of 0 to each cell
-    const board = new Array()
+    const board = []
     for(let i = 0; i < GameBoard.ROWS; i++) {
       board[i] = new Array(GameBoard.COLUMNS).fill(0)
     }
@@ -70,6 +70,8 @@ export default class GameBoard {
       })) {
         // if they are equal we set the winner of the current game
         this.winner = this.board[x][y]
+
+        this.connectedTiles = [[x, y], [x, y+1], [x, y+2], [x, y+3]]
         return true
       }
 
@@ -88,7 +90,7 @@ export default class GameBoard {
         value === this.board[x+3][y+3]) {
         this.winner = this.board[x][y]
 
-        // this.connectedTiles = [[x, y], [x+1, y+1], [x+2, y+2] ]
+        this.connectedTiles = [[x, y], [x+1, y+1], [x+2, y+2], [x+3, y+3]]
         return true
       }
 
@@ -105,6 +107,7 @@ export default class GameBoard {
         return cell === this.board[x][y]
       })) {
         this.winner = this.board[x][y]
+        this.connectedTiles = [[x, y], [x+1, y], [x+2, y], [x+3, y]]
         return true
       }
 
@@ -122,6 +125,8 @@ export default class GameBoard {
         value === this.board[x+2][y-2] &&
         value === this.board[x+3][y-3]) {
         this.winner = this.board[x][y]
+
+        this.connectedTiles = [[x, y], [x+1, y-1], [x+2, y-2], [x+3, y-3]]
         return true
       }
 

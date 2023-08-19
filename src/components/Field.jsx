@@ -10,10 +10,18 @@ export default function Field(props) {
   let counterYellow = counterYellowLarge
 
   const styles = {
-    width: props.screenSize !== 'small' ? '64px' : '39px',
-    height: props.screenSize !== 'small' ? '64px' : '39px',
+    // width: props.screenSize !== 'small' ? '64px' : '39px',
+    // height: props.screenSize !== 'small' ? '64px' : '39px',
+    width:`${0.101266 * props.boardWidth}px`,
+    height:`${0.101266 * props.boardWidth}px`,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
     cursor: 'pointer',
     position: 'relative',
+    // border: '2px solid red',
+    margin: '0',
+    padding: '0',
     // bowShadow: '0 0 10px 10px #fff inset',
   }
 
@@ -40,6 +48,9 @@ export default function Field(props) {
     >
       {props.value !== 0 &&
         <img src={props.value === 1 ? counterRed : counterYellow} alt="counter disk" />
+      }
+      {props.isWinningTile &&
+        <div className="field__circle"></div>
       }
     </motion.div>
   )

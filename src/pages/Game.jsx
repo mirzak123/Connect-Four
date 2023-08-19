@@ -63,6 +63,7 @@ export default function Game() {
   }
 
   function toggleOnMove() {
+    //TODO: put reseting timer logic here
     game.currentGameBoard.onMove = game.currentGameBoard.onMove === 1 ? 2 : 1
     setGame(new ConnectFour(game))
   }
